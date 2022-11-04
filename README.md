@@ -45,3 +45,62 @@ The goal of this project is to build your own database from several csv files. F
 - https://seaborn.pydata.org/
 - https://pandas.pydata.org/docs/
 - https://towardsdatascience.com/beware-of-storytelling-with-data-1710fea554b0?gi=537e0c10d89e
+
+
+
+
+## The first stage of the project - cleaning up unnecessary data
+import pandas as pd
+import numpy as np
+import warnings
+warnings.filterwarnings('ignore')
+from urllib.request import urlopen
+pd.set_option('display.max_columns', None)
+
+
+df_actor=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/actor.csv')
+df_category=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/category.csv')
+df_film=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/film.csv')
+df_inventory=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/inventory.csv')
+df_language=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/language.csv')
+df_old_HDD=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/old_HDD.csv')
+df_rental=pd.read_csv('/Users/vasiliiutkin/Desktop/ironhack/sql-data-base-building/data/rental.csv')
+
+
+df_actor.head()
+df_actor.drop(['last_update'], axis=1)
+
+df_category
+df_category.drop(['last_update'], axis=1)
+
+df_film
+df_film.drop(['original_language_id','language_id', 'last_update','release_year'], axis=1)
+
+df_inventory
+df_inventory.drop(['last_update'], axis=1)
+
+df_language
+df_language.drop(['last_update'], axis=1)
+
+df_old_HDD
+df_old_HDD.drop(['release_year'], axis=1)
+
+df_rental
+df_language.drop(['last_update'], axis=1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
